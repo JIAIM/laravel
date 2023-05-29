@@ -59,9 +59,22 @@ Route::get('/main', function () {
     return view('welcome');
 });
 
-Route::get('/films/', [FilmController::class,'index']);
-Route::get('/films/create', [FilmController::class,'create']);
+
+Route::get('/films/', [FilmController::class,'index'])->name('film.index');
+Route::get('/films/create', [FilmController::class,'create'])->name('film.create');
+Route::post('/films/', [FilmController::class,'store'])->name('film.store');
+Route::get('/films/{film}', [FilmController::class,'show'])->name('film.show');
+Route::get('/films/{film}/edit', [FilmController::class,'edit'])->name('film.edit');
+Route::patch('/films/{film}/edit', [FilmController::class,'update'])->name('film.update');
+Route::delete('/films/{film}', [FilmController::class,'delete'])->name('film.delete');
+
+
+
+
+Route::get('/films2/', [FilmController::class,'index']);
 Route::get('/films/update', [FilmController::class,'update']);
 Route::get('/films/delete', [FilmController::class,'delete']);
 Route::get('/films/first_or_create', [FilmController::class,'firstOrCreate']);
 Route::get('/films/update_or_create', [FilmController::class,'updateOrCreate']);
+
+

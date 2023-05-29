@@ -19,6 +19,9 @@ return new class extends Migration
             $table->unsignedInteger('year')->nullable();
             $table->timestamps();
             $table->softDeletes();
+            $table->unsignedBigInteger('studio_id')->nullable();
+            $table->index('studio_id', 'film_studio_idx');
+            $table->foreign('studio_id', 'film_studio_fk')->on('studios')->references('id');
         });
     }
 

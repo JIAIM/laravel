@@ -3,50 +3,54 @@
 namespace App\Http\Controllers;
 
 use App\Models\Film;
+use App\Models\Genre;
 use Illuminate\Http\Request;
+use PHPUnit\Metadata\PostCondition;
 
 class FilmController extends Controller
 {
     public function index(){
-        $films = Film::where('year','>=',200)->get();
-        foreach ($films as $film){
-            dump($film->title);
-        }
-        dd($films);
+        $films = Film::all();
+        return view('film.index', compact('films'));
     }
 
     public function create(){
-        $filmsArr = [
-            [
-                'title' => 'The Green Mile',
-                'director' => 'Frank Darabont',
-                'image' => 'The_Green_Mile_(movie_poster).jpeg',
-                'year' => '1999',
-            ],
-            [
-                'title' => 'Back to the Future',
-                'director' => 'Robert Zemeckis',
-                'image' => 'Back_to_the_Future.jpeg',
-                'year' => '1985',
-            ],
-        ];
-
-        foreach ($filmsArr as $film){
-            Film::create($film);
-        }
-
-        dd('create completed');
+        return view('film.create');
     }
 
-    public function update(){
-        $film = Film::find(20);
-        $film->update([
-            'year'=>'2019',
+    public function store(){
+        $data = request()->validate([
+            'title'=>'string',
+            'director'=>'string',
+            'image'=>'string',
+            'year'=>'integer',
         ]);
+        Film::create($data);
+        return redirect()->route('film.index');
     }
 
-    public function delete(){
-        return 'GG';
+    public function show(Film $film){
+        return view('film.show', compact('film'));
+    }
+
+    public function edit(Film $film){
+        return view('film.edit', compact('film'));
+    }
+
+    public function update(Film $film){
+        $data = request()->validate([
+            'title'=>'string',
+            'director'=>'string',
+            'image'=>'string',
+            'year'=>'integer',
+        ]);
+        $film->update($data);
+        return redirect()->route('film.show',$film->id);
+    }
+
+    public function delete(Film $film){
+        $film->delete();
+        return redirect()->route('film.index');
     }
 
     public function firstOrCreate(){
