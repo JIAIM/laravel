@@ -5,6 +5,7 @@ use App\Http\Controllers\MyPlaceController;
 use App\Http\Controllers\MouseController;
 use App\Http\Controllers\Mouse2Controller;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\FilmController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,10 +55,13 @@ Route::get('/syrokopcheni', function () {
 
 Route::get('/layout/type_syrokopcheni.blade.php/{name}/{value}/', [ProductController::class,'show']);
 
-
-
-
-
 Route::get('/main', function () {
     return view('welcome');
 });
+
+Route::get('/films/', [FilmController::class,'index']);
+Route::get('/films/create', [FilmController::class,'create']);
+Route::get('/films/update', [FilmController::class,'update']);
+Route::get('/films/delete', [FilmController::class,'delete']);
+Route::get('/films/first_or_create', [FilmController::class,'firstOrCreate']);
+Route::get('/films/update_or_create', [FilmController::class,'updateOrCreate']);

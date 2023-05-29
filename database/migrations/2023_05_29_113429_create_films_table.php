@@ -16,7 +16,9 @@ return new class extends Migration
             $table->string('title');
             $table->string('director');
             $table->string('image')->nullable();
+            $table->unsignedInteger('year')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
