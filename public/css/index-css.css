@@ -5,16 +5,24 @@
 
 .phon1{
     background-image: url("photo/a2.jpg");
-    height: 1000px;
+    opacity: 0.95;
+    height: 750px;
     width: 1920px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
+.phon1 div{
+    margin-top: 130px;
+    display: flex;
+    flex-direction: column;
+}
 
-.phon1 p{
+.phon1 div p{
     text-align: center;
     font-family: "Lora", bold;
     color: #F7F0F5;
-    margin-top: 180px;
 }
 
 
@@ -22,7 +30,6 @@
     background-color: #0D0E0E;
     height: 250px;
     width: 1920px;
-    opacity: 0.95;
     align-items: center;
     justify-content: space-between;
     display: flex;
@@ -371,7 +378,6 @@
     background-color: #0D0E0E;
     height: 250px;
     width: 1920px;
-    opacity: 0.95;
     display: flex;
     justify-content: space-between;
     margin:0 auto;
@@ -429,18 +435,28 @@
 }
 
 @media all and (max-width: 600px) {
+    .phon1 div{
+
+        display: flex;
+        flex-direction: column;
+    }
+
     .phon1 {
         background-image: url("photo/a2.jpg");
+        opacity: 0.95;
         height: 285px;
         width: 600px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
     }
 
 
-    .phon1 p {
+    .phon1 div p {
         text-align: center;
         font-family: "Lora", bold;
         color: #F7F0F5;
-        margin-top: 0px;
+        margin-top: -100px;
     }
 
 
@@ -489,6 +505,21 @@
 
     .zamov {
         text-decoration: none;
+        width: 100px;
+        height: 30px;
+        background-color: #F7F052;
+        border-radius: 5px;
+        text-align: center;
+        margin:0 auto;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 100px;
+        font-family: "Comfortaa";
+        font-weight: 700;
+        font-size: 15px;
+        color: #000000;
     }
 
     .zamov div:hover {

@@ -1,17 +1,20 @@
 @include('layout.header')
-<link rel="stylesheet" type="text/css" href="../css/index-css.css">
-<p class="txt1">Куликівські ковбаси<br>Ратибор II</p>
-<p class="txt2" style="margin-top: 0">Ковбаси українського виробника</p>
-<form action="product.php" method="post">
-    <button type="submit" class="zamov">Замовити</button>
-</form>
+<link rel="stylesheet" type="text/css" href="{{asset('css/index-css.css')}}">
+<div class="phon1">
+    <div>
+        <p class="txt1">Куликівські ковбаси<br>Ратибор II</p>
+        <p class="txt2" style="margin-top: 0">Ковбаси українського виробника</p>
+        <form action="/product" method="get">
+            <button type="submit" class="zamov">Замовити</button>
+        </form>
+    </div>
 </div>
 <div class="why">
     <p>Чому Куликівські ковбаси?</p>
     <ul class="log">
         <li>
             <div>
-                <img src="../css/photo/guarantee-svgrepo-com (1).svg">
+                <img src="{{asset('css/photo/guarantee-svgrepo-com (1).svg')}}">
                 <p>Головна</p>
                 <p style="margin-top: 30px">20+ років</p>
                 <p style="margin-top: 5px; font-size: 32px">компанія створює м’ясну продукцію</p>
@@ -19,7 +22,7 @@
         </li>
         <li>
             <div>
-                <img src="../css/photo/sausage-svgrepo-com.svg">
+                <img src="{{asset('css/photo/sausage-svgrepo-com.svg')}}">
                 <p>Вибір</p>
                 <p style="margin-top: 30px">250+ видів</p>
                 <p style="margin-top: 5px; font-size: 32px">м’яса та різних ковбасних виробів</p>
@@ -27,7 +30,7 @@
         </li>
         <li>
             <div>
-                <img src="../css/photo/delivery-transport-svgrepo-com.svg">
+                <img src="{{asset('css/photo/delivery-transport-svgrepo-com.svg')}}">
                 <p>Доставка</p>
                 <p style="margin-top: 0px">50+ магазинів</p>
                 <p style="margin-top: 5px; font-size: 32px">по всій території України</p>
@@ -37,7 +40,7 @@
     <ul class="log-phone">
         <li>
             <div>
-                <img src="../css/photo/guarantee-svgrepo-com (1).svg">
+                <img src="{{asset('css/photo/guarantee-svgrepo-com (1).svg')}}">
                 <p>Головна</p>
                 <p style="margin-top: 4px">20+ років</p>
                 <p style="margin-top: 2px; font-size: 9px">компанія створює м’ясну продукцію</p>
@@ -45,7 +48,7 @@
         </li>
         <li>
             <div>
-                <img src="../css/photo/sausage-svgrepo-com.svg">
+                <img src="{{asset('css/photo/sausage-svgrepo-com.svg')}}">
                 <p>Вибір</p>
                 <p style="margin-top: 4px">250+ видів</p>
                 <p style="margin-top: 2px; font-size: 9px">м’яса та різних ковбасних виробів</p>
@@ -53,7 +56,7 @@
         </li>
         <li>
             <div>
-                <img src="../css/photo/delivery-transport-svgrepo-com.svg">
+                <img src="{{asset('css/photo/delivery-transport-svgrepo-com.svg')}}">
                 <p>Доставка</p>
                 <p style="margin-top: 0px">50+ магазинів</p>
                 <p style="margin-top: 2px; font-size: 9px">по всій території України</p>
@@ -64,66 +67,66 @@
 <div class="product">
     <p>Продукція</p>
     <ul class="prod">
-        <a href="syrokopcheni.php">
+        <a href="/syrokopcheni/1">
             <li>
                 <div>
-                    <img src="../css/photo/index-product/syrokopchena_kovbaca.jpg">
+                    <img src="{{asset('css/photo/index-product/syrokopchena_kovbaca.jpg')}}">
                     <div>
                         <p>Сирокопчені ковбаси</p>
                         <div>
-                            <img src="../css/photo/right.svg">
+                            <img src="{{asset('css/photo/right.svg')}}">
                         </div>
                     </div>
                 </div>
             </li>
         </a>
-        <a href="syrokopcheni.php">
+        <a href="/syrokopcheni/2">
             <li>
                 <div>
-                    <img src="../css/photo/index-product/shynka.jpg">
+                    <img src="{{asset('css/photo/index-product/shynka.jpg')}}">
                     <div>
                         <p>Шинки</p>
                         <div>
-                            <img src="../css/photo/right.svg">
+                            <img src="{{asset('css/photo/right.svg')}}">
                         </div>
                     </div>
                 </div>
             </li>
         </a>
-        <a href="syrokopcheni.php">
+        <a href="/syrokopcheni/3">
             <li>
                 <div>
-                    <img src="../css/photo/index-product/varena_kovbaca.jpg">
+                    <img src="{{asset('css/photo/index-product/varena_kovbaca.jpg')}}">
                     <div>
                         <p>Варені ковбаси</p>
                         <div>
-                            <img src="../css/photo/right.svg">
+                            <img src="{{asset('css/photo/right.svg')}}">
                         </div>
                     </div>
                 </div>
             </li>
         </a>
-        <a href="syrokopcheni.php">
+        <a href="/syrokopcheni/4">
             <li>
                 <div>
-                    <img src="../css/photo/index-product/sosyska.jpg">
+                    <img src="{{asset('css/photo/index-product/sosyska.jpg')}}">
                     <div>
                         <p>Сосиски Сардельки</p>
                         <div>
-                            <img src="../css/photo/right.svg">
+                            <img src="{{asset('css/photo/right.svg')}}">
                         </div>
                     </div>
                 </div>
             </li>
         </a>
-        <a href="syrokopcheni.php">
+        <a href="/syrokopcheni/5">
             <li>
                 <div>
-                    <img src="../css/photo/index-product/syrokopcheni_prodyktu.jpg">
+                    <img src="{{asset('css/photo/index-product/syrokopcheni_prodyktu.jpg')}}">
                     <div>
                         <p>Сирокопчені продукти</p>
                         <div>
-                            <img src="../css/photo/right.svg">
+                            <img src="{{asset('css/photo/right.svg')}}">
                         </div>
                     </div>
                 </div>
@@ -131,40 +134,40 @@
         </a>
     </ul>
     <ul class="prod-phone">
-        <a href="syrokopcheni.php">
+        <a href="/syrokopcheni/1">
             <li>
                 <div>
-                    <img src="../css/photo/index-product/syrokopchena_kovbaca.jpg">
+                    <img src="{{asset('css/photo/index-product/syrokopchena_kovbaca.jpg')}}">
                     <div>
                         <p>Сирокопчені ковбаси</p>
                         <div>
-                            <img src="../css/photo/right.svg">
+                            <img src="{{asset('css/photo/right.svg')}}">
                         </div>
                     </div>
                 </div>
             </li>
         </a>
-        <a href="syrokopcheni.php">
+        <a href="/syrokopcheni/2">
             <li>
                 <div>
-                    <img src="../css/photo/index-product/shynka.jpg">
+                    <img src="{{asset('css/photo/index-product/shynka.jpg')}}">
                     <div>
                         <p>Шинки</p>
                         <div>
-                            <img src="../css/photo/right.svg">
+                            <img src="{{asset('css/photo/right.svg')}}">
                         </div>
                     </div>
                 </div>
             </li>
         </a>
-        <a href="syrokopcheni.php">
+        <a href="/syrokopcheni/3">
             <li>
                 <div>
-                    <img src="../css/photo/index-product/varena_kovbaca.jpg">
+                    <img src="{{asset('css/photo/index-product/varena_kovbaca.jpg')}}">
                     <div>
                         <p>Варені ковбаси</p>
                         <div>
-                            <img src="../css/photo/right.svg">
+                            <img src="{{asset('css/photo/right.svg')}}">
                         </div>
                     </div>
                 </div>
@@ -172,7 +175,7 @@
         </a>
     </ul>
 </div>
-<div class="message">
+<!--<div class="message">
     <p>Надіслати повідомлення</p>
     <ul class="mes">
         <li>
@@ -207,6 +210,5 @@
             Надіслати
         </div>
     </a>
-</div>
+</div>-->
 @include('layout.footer')
-

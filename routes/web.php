@@ -41,20 +41,6 @@ Route::post('/3', [Mouse2Controller::class,'result']);
 Route::get('/team/{id}/{name}/', [MouseController::class,'show'])->whereNumber('id');
 
 
-Route::get('/index', function () {
-    return view('index');
-});
-
-Route::get('/product', function () {
-    return view('product');
-});
-
-Route::get('/syrokopcheni', function () {
-    return view('syrokopcheni');
-});
-
-Route::get('/layout/type_syrokopcheni.blade.php/{name}/{value}/', [ProductController::class,'show']);
-
 Route::get('/main', function () {
     return view('welcome');
 });
@@ -78,3 +64,15 @@ Route::get('/films/first_or_create', [FilmController::class,'firstOrCreate']);
 Route::get('/films/update_or_create', [FilmController::class,'updateOrCreate']);
 
 
+
+
+Route::get('/index', [ProductController::class,'index']);
+Route::get('/product', [ProductController::class,'product']);
+Route::get('/contact', [ProductController::class,'contact']);
+Route::get('/about_us', [ProductController::class,'about_us']);
+Route::get('/syrokopcheni/{data}', [ProductController::class,'syrokopcheni']);
+Route::get('/basket', [ProductController::class,'basket']);
+Route::get('/phone-menu', [ProductController::class,'phone']);
+Route::get('/layout/type_syrokopcheni.blade.php/{name}/{value}/', [ProductController::class,'show']);
+Route::get('/add/{name}/{num}', [ProductController::class,'add']);
+Route::get('/del/{num}', [ProductController::class,'delete']);

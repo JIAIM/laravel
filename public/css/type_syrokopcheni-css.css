@@ -18,7 +18,7 @@
 
 .zamov{
     text-decoration:none;
-    margin-right: 100px;
+    margin-right: 50px;
 }
 
 .zamov div{
@@ -100,7 +100,7 @@
 .txt1{
     margin-right: 100px;
     color: #ffffff;
-    margin-top: 200px;
+    margin-top: 230px;
     width: 622px;
     height: 666px;
     font-family: "Comfortaa";
@@ -263,7 +263,7 @@
     }
 
     .txt1{
-        margin-right: 100px;
+        margin-right: 0px;
         color: #ffffff;
         margin-top: 20px;
         width: 400px;
@@ -298,7 +298,7 @@
         border-radius: 5px;
         width: 400px;
         height: 260px;
-        margin-left: 20px;
+        margin-left: 0px;
         display: flex;
         justify-content: center;
         align-self: center;

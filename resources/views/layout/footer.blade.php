@@ -1,7 +1,7 @@
 
 <footer class="footer">
     <a href="#">
-        <img src="../css/photo/logo4.png" class="logo2">
+        <img src="{{asset('css/photo/logo4.png')}}" class="logo2">
     </a>
     <ul class="fot">
         <li>
@@ -30,11 +30,11 @@
             </ul>
         </li>
     </ul>
-    <img src="../css/photo/footer.png" class="for-img">
+    <img src="{{asset('css/photo/footer.png')}}" class="for-img">
     <ul class="messangers-phone">
-        <li><a href="#"><img src="../css/photo/viber.svg"></a></li>
-        <li><a href="#"><img src="../css/photo/telega.svg"></a></li>
-        <li><a href="#"><img src="../css/photo/insta.svg"></a></li>
+        <li><a href="#"><img src="{{asset('css/photo/viber.svg')}}"></a></li>
+        <li><a href="#"><img src="{{asset('css/photo/telega.svg')}}"></a></li>
+        <li><a href="#"><img src="{{asset('css/photo/insta.svg')}}"></a></li>
     </ul>
 </footer>
 </body>

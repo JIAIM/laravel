@@ -60,9 +60,9 @@
 }
 
 .product{
-    height: 1500px;
     width: 1920px;
-    background-image: url("photo/f2.jpg");
+    background-color: black;
+    opacity: 0.95;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
@@ -97,35 +97,35 @@
 }
 
 .prod1 li div{
-    width: 450px;
-    height: 325px;
+    width: 900px;
+    height: 650px;
     background-color: #FFC759;
     border-radius: 5px;
 }
 
 .prod1 li div div img{
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
 }
 
 .prod1 li div img{
-    width: 450px;
-    height: 270px;
+    width: 900px;
+    height: 540px;
     border-radius: 5px 5px 0px 0px;
 }
 
 .prod1 li div div{
     margin: 0;
-    width: 450px;
-    height: 55px;
+    width: 900px;
+    height: 110px;
     display: flex;
     justify-content: center;
 }
 
 .prod1 li div div div{
     align-self: center;
-    height: 59px;
-    width: 110px;
+    height: 114px;
+    width: 220px;
     background-color: #E63946;
     border-radius: 0 0 5px 0;
     display: flex;
@@ -139,12 +139,12 @@
 .prod1 li div div p{
     color: black;
     text-align: center;
-    font-size: 25px;
+    font-size: 40px;
     display: flex;
     flex-direction: column;
     font-family: "Comfortaa";
-    width: 340px;
-    height: 55px;
+    width: 680px;
+    height: 110px;
     margin-top: 0;
     margin-right: 0
 }
@@ -209,13 +209,34 @@
     display: none;
 }
 
-.phone-menu{
+.phon-menu{
     display: none;
 }
 
 .messangers-phone{
     display: none;
 }
+
+.product span{
+    color: white;
+    text-align: center;
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    font-family: "Comfortaa";
+    margin-top: 30px;
+}
+
+.is-empty{
+    color: white;
+    text-align: center;
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    font-family: "Comfortaa";
+    margin-top: 30px;
+}
+
 
 @media all and (max-width: 600px){
     .header {
@@ -245,7 +266,7 @@
         margin-left: 20px;
     }
 
-    .phone-menu{
+    .phon-menu{
         display: flex;
         height: 17px;
         width: 30px;
@@ -253,9 +274,9 @@
     }
 
     .product{
-        height: 900px;
+        height: auto;
         width: 600px;
-        background-image: url("photo/f2.jpg");
+        background-color: black;
         display: flex;
         flex-wrap: nowrap;
         flex-direction: column;
