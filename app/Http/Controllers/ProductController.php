@@ -11,32 +11,46 @@ use Illuminate\Database\Eloquent;
 
 class ProductController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('kylik.index');
     }
-    public function product(){
+
+    public function product()
+    {
         $productsType = TypeSausage::all();
         return view('kylik.product', compact('productsType'));
     }
-    public function contact(){
+
+    public function contact()
+    {
         return view('kylik.contact');
     }
-    public function about_us(){
+
+    public function about_us()
+    {
         return view('kylik.about_us');
     }
-    public function syrokopcheni($id){
-        $sausages = Product::all()->where('type_sausage_id','=',$id);
+
+    public function syrokopcheni($id)
+    {
+        $sausages = Product::all()->where('type_sausage_id', '=', $id);
         return view('kylik.syrokopcheni', compact('sausages'));
     }
-    public function basket(){
+
+    public function basket()
+    {
         $baskets = Basket::all();
-        return view('kylik.basket',compact('baskets'));
+        return view('kylik.basket', compact('baskets'));
     }
-    public function phone(){
+
+    public function phone()
+    {
         return view('kylik.phone-menu');
     }
 
-    public function show(string $name,string $value){
+    public function show(string $name, string $value)
+    {
         $data = array(
             'name' => $name,
             'value' => $value
@@ -44,51 +58,69 @@ class ProductController extends Controller
         return view('kylik.product_syrokop', $data);
     }
 
-    public function add(string $name,int $id){
+    public function add(string $name, int $id)
+    {
         $bas = Basket::all();
-        $t=Basket::all()->where('product_id','=',$id);
-        $a=null;
-        foreach ($t as $g){
+        $t = Basket::all()->where('product_id', '=', $id);
+        $a = null;
+        foreach ($t as $g) {
             $a = $g;
         }
-        if($a!=null) {
+        if ($a != null) {
             $basket = Basket::findOrFail($a->id);
         }
-        $check=1;
-        if(count(Basket::all())==0){
+        $check = 1;
+        if (count(Basket::all()) == 0) {
             $temp = [
-                'product_id'=>$id,
-                'amount'=>1,
+                'product_id' => $id,
+                'amount' => 1,
             ];
             Basket::create($temp);
-            $check=0;
+            $check = 0;
         }
-        foreach ($bas as $item){
-            if(($item->product_id)==$id) {
-                $arr=[
-                    'product_id'=>($item->product_id),
-                    'amount'=> ($item->amount += 1),
+        foreach ($bas as $item) {
+            if (($item->product_id) == $id) {
+                $arr = [
+                    'product_id' => ($item->product_id),
+                    'amount' => ($item->amount += 1),
                 ];
                 $basket->update($arr);
                 $check = 0;
                 break;
             }
         }
-        if($check){
+        if ($check) {
             $temp = [
-                'product_id'=>$id,
-                'amount'=>1,
+                'product_id' => $id,
+                'amount' => 1,
             ];
             Basket::create($temp);
         }
 
-        return $this->show($name,$id);
+        return $this->show($name, $id);
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         $basket = Basket::findOrFail($id);
-        $basket->delete();
+        if ($basket->amount == 1) {
+            $basket->delete();
+        } else {
+            $arr = [
+                'product_id' => ($basket->product_id),
+                'amount' => ($basket->amount -= 1),
+            ];
+            $basket->update($arr);
+        }
         $baskets = Basket::all();
-        return view('kylik.basket',compact('baskets'));
+        return view('kylik.basket', compact('baskets'));
+    }
+
+    public function complete(){
+        $basket = Basket::all();
+        foreach ($basket as $item){
+            $item->delete();
+        }
+        return view('kylik.complete');
     }
 }

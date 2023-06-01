@@ -16,6 +16,10 @@
     max-width: 1920px;
 }
 
+.zamov div:hover{
+    background-color: #F8CF26;
+}
+
 .zamov{
     text-decoration:none;
     margin-right: 50px;

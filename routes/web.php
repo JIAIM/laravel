@@ -76,3 +76,4 @@ Route::get('/phone-menu', [ProductController::class,'phone']);
 Route::get('/layout/type_syrokopcheni.blade.php/{name}/{value}/', [ProductController::class,'show']);
 Route::get('/add/{name}/{num}', [ProductController::class,'add']);
 Route::get('/del/{num}', [ProductController::class,'delete']);
+Route::get('/complete', [ProductController::class,'complete']);

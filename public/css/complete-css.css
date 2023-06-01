@@ -3,6 +3,29 @@
     margin: 0;
 }
 
+body{
+    background-color:black;
+}
+
+.zamov div:hover{
+    background-color: #F8CF26;
+}
+.complete{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 200px;
+}
+
+.thx{
+    color: white;
+    text-align: center;
+    font-size: 45px;
+    display: flex;
+    justify-content: center;
+    font-family: "Comfortaa";
+}
+
 .header {
     background-color: #000000;
     height: 250px;
@@ -122,10 +145,6 @@
     justify-content: center;
 }
 
-.prod1 li div div div:hover{
-    background-color: #EE6677;
-}
-
 .prod1 li div div div{
     align-self: center;
     height: 114px;
@@ -137,7 +156,7 @@
     flex-direction: column;
     align-content: center;
     flex-wrap: wrap;
-    margin-top: -4px;
+    margin-top: -5px;
 }
 
 .prod1 li div div p{
@@ -241,10 +260,6 @@
     margin-top: 30px;
 }
 
-.zamov div:hover{
-    background-color: #F8CF26;
-}
-
 .zamov{
     text-decoration:none;
     display: flex;
@@ -276,6 +291,22 @@
 
 
 @media all and (max-width: 600px){
+    .complete{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 100px;
+    }
+
+    .thx{
+        color: white;
+        text-align: center;
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        font-family: "Comfortaa";
+    }
+
     .header {
         background-color: #000000;
         height: 75px;
@@ -448,13 +479,19 @@
         margin-top: 4px;
     }
 
+    .zamov :hover{
+        background-color: #F8CF26;
+    }
+
+    .zamov div:hover{
+        background-color: #F8CF26;
+    }
+
     .zamov{
         text-decoration:none;
         display: flex;
         justify-content: center;
     }
-
-
 
     .zamov div{
         width: 200px;
@@ -469,17 +506,16 @@
         line-height: 100px;
         font-family: "Comfortaa";
         font-weight: 700;
-        font-size: 54px;
+        font-size: 30px;
         color: #000000;
     }
 
+    .zamov div:hover{
+        background-color: #F8CF26;
+    }
     .zamov div p{
         margin: 0;
         color:black;
         text-align: center;
-    }
-
-    .zamov div:hover{
-        background-color: #FFFFFF;
     }
 }

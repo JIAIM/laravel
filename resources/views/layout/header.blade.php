@@ -32,7 +32,7 @@
             </ul>
 
         </nav>
-            <a href="phone-menu">
+            <a href="/phone-menu">
             <img src="{{asset('css/photo/menu.svg')}}" class="phon-menu">
         </a>
     </header>
